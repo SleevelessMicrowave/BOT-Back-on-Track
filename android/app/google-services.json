@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "166914405731",
+    "firebase_url": "https://bot---back-on-track.firebaseio.com",
+    "project_id": "bot---back-on-track",
+    "storage_bucket": "bot---back-on-track.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166914405731:android:815a7c4db16aeecaa30f56",
+        "android_client_info": {
+          "package_name": "com.eric.bot_back_on_track"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166914405731-e061use1pctq1u2ueh43f83dufbi0cn4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh4RK652Jof8aaUEBK8CdhQsOX2d1PbtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166914405731-e061use1pctq1u2ueh43f83dufbi0cn4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
