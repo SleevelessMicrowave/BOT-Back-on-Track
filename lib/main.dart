@@ -1,3 +1,4 @@
+import 'package:bot_back_on_track/Screens/Login/login_screen.dart';
 import 'package:bot_back_on_track/Screens/Welcome/welcome_screen.dart';
 import 'package:bot_back_on_track/constants.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: WelcomeScreen(),
+      home: LoginScreen(),
     );
   }
 
