@@ -2,6 +2,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_calendar/res/event_firestore_service.dart';
+import 'package:flutter_calendar/ui/pages/add_event.dart';
+import 'package:flutter_calendar/ui/pages/view_event.dart';
+import 'package:table_calendar/table_calendar.dart';
+import 'model/event.dart';
 
 
 class CalendarPage extends StatefulWidget {
