@@ -54,7 +54,7 @@ class Body extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return WelcomeScreen();
+                              return HomeScreen();
                             },
                           ),
                         );
