@@ -40,22 +40,28 @@ class Body extends StatelessWidget {
             RoundedPasswordField(
               onChanged: (value) {},
             ),
-            GoogleSignIn(text: "Google Sign In", press: () {}),
-            RoundedButton(
-              text: "LOGIN",
-              press: () {
-                signInWithGoogle().then((result) {
-                  if (result != null) {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return WelcomeScreen();
-                        },
-                      ),
-                    );
-                  }
-                });
-              },
+            Row(
+              children: <Widget>[
+                RoundedButton(
+                  text: "LOGIN",
+                  press: () {},
+                ),
+                GoogleSignIn(
+                  press: () {
+                    signInWithGoogle().then((result) {
+                      if (result != null) {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return WelcomeScreen();
+                            },
+                          ),
+                        );
+                      }
+                    });
+                  },
+                ),
+              ],
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(

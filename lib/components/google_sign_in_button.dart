@@ -2,12 +2,10 @@ import 'package:bot_back_on_track/constants.dart';
 import 'package:flutter/material.dart';
 
 class GoogleSignIn extends StatelessWidget {
-  final String text;
   final Function press;
   final Color color, textColor;
   const GoogleSignIn({
     Key key,
-    this.text,
     this.press,
     this.color = kPrimaryColor,
     this.textColor = Colors.white,
@@ -16,19 +14,16 @@ class GoogleSignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.fromLTRB(150, 0, 0, 0),
-      width: size.width * 0.3,
+      margin: EdgeInsets.fromLTRB(3, 0, 0, 0),
+      width: size.width * 0.17,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-          color: color,
-          onPressed: press,
-          child: Text(
-            text,
-            style: TextStyle(color: textColor),
-          ),
-        ),
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
+            color: color,
+            onPressed: press,
+            child: Image.asset('assets/images/googleSignIn.webp',
+                height: (size.height * 0.03))),
       ),
     );
   }
