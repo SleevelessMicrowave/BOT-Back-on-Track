@@ -1,11 +1,11 @@
 import 'package:bot_back_on_track/constants.dart';
 import 'package:flutter/material.dart';
 
-class RoundedButton extends StatelessWidget {
+class GoogleSignIn extends StatelessWidget {
   final String text;
   final Function press;
   final Color color, textColor;
-  const RoundedButton({
+  const GoogleSignIn({
     Key key,
     this.text,
     this.press,
@@ -16,7 +16,7 @@ class RoundedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.fromLTRB(0, 0, 150, 0),
+      margin: EdgeInsets.fromLTRB(150, 0, 0, 0),
       width: size.width * 0.3,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
