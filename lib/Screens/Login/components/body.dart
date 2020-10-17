@@ -1,3 +1,4 @@
+import 'package:bot_back_on_track/Screens/Home/home_screen.dart';
 import 'package:bot_back_on_track/Screens/Login/components/background.dart';
 import 'package:bot_back_on_track/Screens/Signup/signup_screen.dart';
 import 'package:bot_back_on_track/components/already_have_an_account_check.dart';
@@ -42,7 +43,16 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "LOGIN",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomeScreen();
+                    },
+                  ),
+                );
+              },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
