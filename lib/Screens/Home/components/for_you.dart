@@ -47,7 +47,7 @@ class _ForYouState extends State<ForYou>
       child: Column(
         children: [
           SectionTitle(
-            text: "Recommended Workouts",
+            text: "Recommended For You",
             press: (){},
           ),
           SizedBox(height: size.height * 0.02),
@@ -65,6 +65,12 @@ class _ForYouState extends State<ForYou>
                   size: size,
                   image: "assets/images/exercising2.jpg",
                   category: "Exercises",
+                  press: (){},
+                ),
+                Recommended(
+                  size: size,
+                  image: "assets/images/food.jpg",
+                  category: "Nutrition",
                   press: (){},
                 ),
                 SizedBox(width: 10),

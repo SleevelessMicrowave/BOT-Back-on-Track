@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:bot_back_on_track/UI/Path/view_event.dart';
+import 'package:bot_back_on_track/constants.dart';
+import 'package:bot_back_on_track/constants.dart';
 import 'package:bot_back_on_track/model/event.dart';
 import 'package:bot_back_on_track/res/event_firestore_service.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +35,7 @@ class _CalendarPageState extends State<CalendarPage> {
     events.forEach((event) {
       DateTime date = DateTime(
           event.eventDate.year, event.eventDate.month, event.eventDate.day, 12);
-      if (data[date] = null) data[date] = [];
+      if (data[date] == null) data[date] = [];
       data[date].add(event);
     });
     return data;
@@ -62,7 +64,7 @@ class _CalendarPageState extends State<CalendarPage> {
                     TableCalendar(
                       events: _events,
                       calendarStyle: CalendarStyle(
-                          todayColor: Colors.blueAccent,
+                          todayColor: kPrimaryColor,
                           selectedColor: Theme.of(context).primaryColor,
                           todayStyle: TextStyle(
                               fontWeight: FontWeight.bold,
