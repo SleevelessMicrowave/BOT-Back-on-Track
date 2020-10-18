@@ -1,4 +1,5 @@
 import 'package:bot_back_on_track/Screens/FitnessQuiz/FitnessQuiz.dart';
+import 'package:bot_back_on_track/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,7 @@ class Assessment extends StatelessWidget {
             Text.rich(
               TextSpan(
                   text: "take another assessment!",
-                  style: TextStyle(color: Colors.blueAccent, fontSize: 15),
+                  style: TextStyle(color: kPrimaryColor, fontSize: 15),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       Navigator.of(context).push(

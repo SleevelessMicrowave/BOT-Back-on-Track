@@ -1,3 +1,4 @@
+import 'package:bot_back_on_track/constants.dart';
 import 'package:flutter/material.dart';
 //import 'package:smart_select/smart_select.dart';
 
@@ -90,7 +91,7 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Select ouchy'),
+      title: Text('Select Pain'),
       contentPadding: EdgeInsets.only(top: 12.0),
       content: SingleChildScrollView(
         child: ListTileTheme(
@@ -102,11 +103,12 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
       ),
       actions: <Widget>[
         FlatButton(
-          child: Text('CANCEL'),
+
+          child: Text('CANCEL', style: TextStyle(color: kPrimaryColor)),
           onPressed: _onCancelTap,
         ),
         FlatButton(
-          child: Text('OK'),
+          child: Text('OK', style: TextStyle(color: kPrimaryColor)),
           onPressed: _onSubmitTap,
         )
       ],
@@ -195,23 +197,44 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dropdown Button"),
+        title: Text("Pain Assessment"),
       ),
       body: Container(
           padding: EdgeInsets.all(20.0),
-          child: Column(children: <Widget>[
-            DropdownButton<ListItem>(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+
+            /*DropdownButton<ListItem>(
                 value: _selectedItem,
                 items: _dropdownMenuItems,
                 onChanged: (value) {
                   setState(() {
                     _selectedItem = value;
                   });
-                }),
-            RaisedButton(
-              child: Text("Open Multiselect"),
-              onPressed: () => _showMultiSelect(context),
-            )
+                }),*/
+            Text(
+              "What is troubling you?",
+              style: TextStyle(fontSize: 30),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 40,
+              width: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: RaisedButton(
+                  color: kPrimaryColor,
+
+
+                    child: Text("Select", style: TextStyle(color: Colors.white)),
+
+
+
+                onPressed: () => _showMultiSelect(context),
+              ),
+            ),
           ])),
     );
   }

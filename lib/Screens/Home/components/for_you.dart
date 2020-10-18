@@ -1,4 +1,5 @@
 import 'package:bot_back_on_track/Screens/Home/components/section_title.dart';
+import 'package:bot_back_on_track/Screens/Stretches/stretches.dart';
 import 'package:flutter/material.dart';
 
 
@@ -59,7 +60,15 @@ class _ForYouState extends State<ForYou>
                   size: size,
                   image: "assets/images/stretches2.jpg",
                   category: "Stretches",
-                  press: (){},
+                  press: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Stretches();
+                        },
+                      ),
+                    );
+                  },
                 ),
                 Recommended(
                   size: size,
@@ -100,41 +109,44 @@ class Recommended extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: 10,),
-      child: SizedBox(
-        width: size.width*0.6,
-        height: size.height*0.2,
+      child: GestureDetector(
+        onTap: press,
+        child: SizedBox(
+          width: size.width*0.6,
+          height: size.height*0.2,
 
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Stack(
-            children: [
-              Image.asset(
-                image,
-                fit: BoxFit.cover,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF343434).withOpacity(0.4),
-                      Color(0xFF343434).withOpacity(0.15),
-                    ],
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Stack(
+              children: [
+                Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color(0xFF343434).withOpacity(0.4),
+                        Color(0xFF343434).withOpacity(0.15),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 10,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 10,
+                  ),
+                  child: Text(
+                    category,
+                    style: TextStyle(fontSize: 20, color: Colors.white,),
+                  ),
                 ),
-                child: Text(
-                  category,
-                  style: TextStyle(fontSize: 20, color: Colors.white,),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
