@@ -1,11 +1,11 @@
+import 'package:bot_back_on_track/Screens/FitnessQuiz/FitnessQuiz.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-
 class Assessment extends StatelessWidget {
-
   final AnimationController animationController;
 
-  Assessment ({
+  Assessment({
     Key key,
     @required this.size,
     @required this.animationController,
@@ -17,7 +17,7 @@ class Assessment extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideTransition(
       position: Tween<Offset>(
-        begin: Offset(0,1),
+        begin: Offset(0, 1),
         end: Offset.zero,
       ).animate(animationController),
       child: Container(
@@ -28,7 +28,7 @@ class Assessment extends StatelessWidget {
           horizontal: 20,
           vertical: 15,
         ),
-        width:double.infinity,
+        width: double.infinity,
         height: 90,
         decoration: BoxDecoration(
           color: Color(0xFFededed),
@@ -43,12 +43,23 @@ class Assessment extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            SizedBox(height: size.height * 0.009,),
+            SizedBox(
+              height: size.height * 0.009,
+            ),
             Text.rich(
               TextSpan(
-                text: "take another assessment!",
-                style: TextStyle(fontSize: 15),
-            ),
+                  text: "take another assessment!",
+                  style: TextStyle(color: Colors.blueAccent, fontSize: 15),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return FitnessQuiz();
+                          },
+                        ),
+                      );
+                    }),
             ),
           ],
         ),

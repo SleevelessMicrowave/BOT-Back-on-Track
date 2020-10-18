@@ -1,12 +1,11 @@
 import 'package:bot_back_on_track/Screens/Home/components/section_title.dart';
+import 'package:bot_back_on_track/Screens/StretchesExercises/Stretches.dart';
 import 'package:flutter/material.dart';
-
 
 class ForYou extends StatefulWidget {
   ForYou({
     Key key,
     //@required this.size,
-
   }) : super(key: key);
 
   //final Size size;
@@ -14,8 +13,8 @@ class ForYou extends StatefulWidget {
   @override
   _ForYouState createState() => _ForYouState();
 }
-class _ForYouState extends State<ForYou>
-    with TickerProviderStateMixin {
+
+class _ForYouState extends State<ForYou> with TickerProviderStateMixin {
   AnimationController _controller;
   Animation<double> _animation;
 
@@ -48,7 +47,7 @@ class _ForYouState extends State<ForYou>
         children: [
           SectionTitle(
             text: "Recommended Workouts",
-            press: (){},
+            press: () {},
           ),
           SizedBox(height: size.height * 0.02),
           SingleChildScrollView(
@@ -59,13 +58,21 @@ class _ForYouState extends State<ForYou>
                   size: size,
                   image: "assets/images/stretches2.jpg",
                   category: "Stretches",
-                  press: (){},
+                  press: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Stretches();
+                        },
+                      ),
+                    );
+                  },
                 ),
                 Recommended(
                   size: size,
                   image: "assets/images/exercising2.jpg",
                   category: "Exercises",
-                  press: (){},
+                  press: () {},
                 ),
                 SizedBox(width: 10),
               ],
@@ -93,11 +100,12 @@ class Recommended extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10,),
+      padding: EdgeInsets.only(
+        left: 10,
+      ),
       child: SizedBox(
-        width: size.width*0.6,
-        height: size.height*0.2,
-
+        width: size.width * 0.6,
+        height: size.height * 0.2,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Stack(
@@ -125,7 +133,10 @@ class Recommended extends StatelessWidget {
                 ),
                 child: Text(
                   category,
-                  style: TextStyle(fontSize: 20, color: Colors.white,),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
@@ -135,4 +146,3 @@ class Recommended extends StatelessWidget {
     );
   }
 }
-
