@@ -30,7 +30,7 @@ class Assessment extends StatelessWidget {
           vertical: 15,
         ),
         width: double.infinity,
-        height: 90,
+        height: 130,
         decoration: BoxDecoration(
           color: Color(0xFFededed),
           borderRadius: BorderRadius.circular(20),
@@ -38,19 +38,19 @@ class Assessment extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text.rich(
+            /*Text.rich(
               TextSpan(
                 text: "New Symptoms?",
                 style: TextStyle(fontSize: 20),
               ),
-            ),
-            SizedBox(
+            ),*/
+            /*SizedBox(
               height: size.height * 0.001,
-            ),
+            ),*/
             Text.rich(
               TextSpan(
-                  text: "Take another assessment!",
-                  style: TextStyle(color: kPrimaryColor, fontSize: 15),
+                  text: "Pain Assessment",
+                  style: TextStyle(color: Colors.black, fontSize: 25),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       Navigator.of(context).push(
@@ -62,9 +62,12 @@ class Assessment extends StatelessWidget {
                       );
                     }),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Text.rich(
               TextSpan(
-                  text: "Recovered?",
+                  text: "Recovered? Click here",
                   style: TextStyle(color: kPrimaryColor, fontSize: 15),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {

@@ -54,7 +54,7 @@ class CalenderBanner extends StatefulWidget {
               horizontal: 10,
             ),
             width: double.infinity,
-            height: 200,
+            height: 175,
 
             padding: EdgeInsets.symmetric(
               horizontal: 10,
