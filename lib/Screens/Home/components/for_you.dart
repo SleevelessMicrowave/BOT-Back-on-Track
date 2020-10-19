@@ -1,3 +1,4 @@
+import 'package:bot_back_on_track/Screens/Description/description.dart';
 import 'package:bot_back_on_track/Screens/Exercises/exercises.dart';
 import 'package:bot_back_on_track/Screens/Home/components/section_title.dart';
 import 'package:bot_back_on_track/Screens/Nutrition/nutrition.dart';
@@ -56,6 +57,20 @@ class _ForYouState extends State<ForYou> with TickerProviderStateMixin {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
+                Recommended(
+                  size: size,
+                  image: "assets/images/injuries.png",
+                  category: "Description",
+                  press: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Description();
+                        },
+                      ),
+                    );
+                  },
+                ),
                 Recommended(
                   size: size,
                   image: "assets/images/stretches2.jpg",
