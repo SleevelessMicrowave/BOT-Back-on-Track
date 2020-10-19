@@ -113,7 +113,7 @@ class SignIn extends State<Body> {
     } catch (e) {
       print(e.toString());
       print("here2");
-
+      print(user);
       if (true) {
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) {
