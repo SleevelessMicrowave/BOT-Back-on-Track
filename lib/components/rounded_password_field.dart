@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
-  const RoundedPasswordField ({
-    Key key, this.onChanged,
+  final TextEditingController controller;
+  const RoundedPasswordField({
+    Key key,
+    this.onChanged,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -13,12 +16,17 @@ class RoundedPasswordField extends StatelessWidget {
     return TextFieldContainer(
       child: TextField(
         obscureText: true,
+        controller: controller,
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: "Password",
-          icon: Icon(Icons.lock, color: kPrimaryColor,
+          icon: Icon(
+            Icons.lock,
+            color: kPrimaryColor,
           ),
-          suffixIcon: Icon(Icons.visibility, color: kPrimaryColor,
+          suffixIcon: Icon(
+            Icons.visibility,
+            color: kPrimaryColor,
           ),
           border: InputBorder.none,
         ),
@@ -26,4 +34,3 @@ class RoundedPasswordField extends StatelessWidget {
     );
   }
 }
-

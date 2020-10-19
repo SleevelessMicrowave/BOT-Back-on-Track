@@ -1,4 +1,5 @@
 import 'package:bot_back_on_track/Screens/FitnessQuiz/FitnessQuiz.dart';
+import 'package:bot_back_on_track/Screens/Recovered/recovered.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ class Assessment extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * 0.009,
+              height: size.height * 0.001,
             ),
             Text.rich(
               TextSpan(
@@ -61,10 +62,24 @@ class Assessment extends StatelessWidget {
                       );
                     }),
             ),
+            Text.rich(
+              TextSpan(
+                  text: "Recovered?",
+                  style: TextStyle(color: Colors.blueAccent, fontSize: 15),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Recovered();
+                          },
+                        ),
+                      );
+                    }),
+            )
           ],
         ),
       ),
     );
   }
 }
-

@@ -1,37 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:smart_select/smart_select.dart';
-
-/*class Body extends StatelessWidget {
- @override
- Widget build(BuildContext context) {
-   // TODO: implement build
-   throw UnimplementedError();
- }
-}*/
-
-/*class Body extends StatefulWidget {
- @override
- _BodyState createState() => _BodyState();
-}
-
-class _BodyState extends State<Body> {
- List<int> value = [2];
- List<S2Choice<int>> frameworks = [
-   S2Choice<int>(value: 1, title: 'Ionic'),
-   S2Choice<int>(value: 2, title: 'Flutter'),
-   S2Choice<int>(value: 3, title: 'React Native'),
- ];
-
- @override
- Widget build(BuildContext context) {
-   return SmartSelect<int>.multiple(
-     title: 'Frameworks',
-     value: value,
-     //choiceItems: options,
-     onChange: (state) => setState(() => value = state.value),
-   );
- }
-}*/
 
 class ouchList {
   static var ouchies = [];
@@ -183,11 +150,14 @@ class _BodyState extends State<Body> {
       builder: (BuildContext context) {
         return MultiSelectDialog(
           items: items,
-          //initialSelectedValues: [1, 3].toSet(),
+          initialSelectedValues: [1, 2, 3, 4, 5, 6, 7].toSet(),
         );
       },
     );
 
+    //print("here");
+    //print(ouchList.ouchies[1]);
+    //print("here");
     print(selectedValues);
   }
 
