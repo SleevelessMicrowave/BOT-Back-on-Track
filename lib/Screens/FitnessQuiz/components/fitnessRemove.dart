@@ -1,37 +1,39 @@
-import 'package:flutter/material.dart';
 import 'package:bot_back_on_track/Screens/FitnessQuiz/components/body.dart';
+
+import 'package:bot_back_on_track/constants.dart';
+import 'package:flutter/material.dart';
 //import 'package:smart_select/smart_select.dart';
 
 /*class Body extends StatelessWidget {
-@override
-Widget build(BuildContext context) {
-  // TODO: implement build
-  throw UnimplementedError();
-}
+ @override
+ Widget build(BuildContext context) {
+   // TODO: implement build
+   throw UnimplementedError();
+ }
 }*/
 
 /*class Body extends StatefulWidget {
-@override
-_BodyState createState() => _BodyState();
+ @override
+ _BodyState createState() => _BodyState();
 }
 
 class _BodyState extends State<Body> {
-List<int> value = [2];
-List<S2Choice<int>> frameworks = [
-  S2Choice<int>(value: 1, title: 'Ionic'),
-  S2Choice<int>(value: 2, title: 'Flutter'),
-  S2Choice<int>(value: 3, title: 'React Native'),
-];
+ List<int> value = [2];
+ List<S2Choice<int>> frameworks = [
+   S2Choice<int>(value: 1, title: 'Ionic'),
+   S2Choice<int>(value: 2, title: 'Flutter'),
+   S2Choice<int>(value: 3, title: 'React Native'),
+ ];
 
-@override
-Widget build(BuildContext context) {
-  return SmartSelect<int>.multiple(
-    title: 'Frameworks',
-    value: value,
-    //choiceItems: options,
-    onChange: (state) => setState(() => value = state.value),
-  );
-}
+ @override
+ Widget build(BuildContext context) {
+   return SmartSelect<int>.multiple(
+     title: 'Frameworks',
+     value: value,
+     //choiceItems: options,
+     onChange: (state) => setState(() => value = state.value),
+   );
+ }
 }*/
 
 class ouchList {
@@ -71,11 +73,9 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
       if (checked) {
         _selectedValues.add(itemValue);
         ouchList.ouchies.add(itemName);
-        print(ouchList.ouchies);
       } else {
         _selectedValues.remove(itemValue);
         ouchList.ouchies.remove(itemName);
-        print(ouchList.ouchies);
       }
     });
   }
@@ -100,13 +100,12 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
   void _onSubmitTap() {
     check();
     Navigator.pop(context, _selectedValues);
-    print(Body.bananaList);
   }
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Select ouchy'),
+      title: Text('Select Pain'),
       contentPadding: EdgeInsets.only(top: 12.0),
       content: SingleChildScrollView(
         child: ListTileTheme(
@@ -118,11 +117,11 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
       ),
       actions: <Widget>[
         FlatButton(
-          child: Text('CANCEL'),
+          child: Text('CANCEL', style: TextStyle(color: kPrimaryColor)),
           onPressed: _onCancelTap,
         ),
         FlatButton(
-          child: Text('OK'),
+          child: Text('OK', style: TextStyle(color: kPrimaryColor)),
           onPressed: _onSubmitTap,
         )
       ],
@@ -149,6 +148,7 @@ class ListItem {
 }
 
 class fitnessRemove extends StatefulWidget {
+  //static var bananaList = [];
   @override
   _stateRemove createState() => _stateRemove();
 }
@@ -211,26 +211,40 @@ class _stateRemove extends State<fitnessRemove> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dropdown Button"),
+        title: Text("Recovered"),
       ),
       body: Container(
           padding: EdgeInsets.all(20.0),
-          child: Column(children: <Widget>[
-            DropdownButton<ListItem>(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                /*DropdownButton<ListItem>(
                 value: _selectedItem,
                 items: _dropdownMenuItems,
                 onChanged: (value) {
                   setState(() {
                     _selectedItem = value;
                   });
-                }),
-            RaisedButton(
-              child: Text("Open Multiselect"),
-              onPressed: () => _showMultiSelect(context),
-            )
-          ])),
+                }),*/
+                Text(
+                  "What have you recovered from?",
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  height: 40,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: RaisedButton(
+                    color: kPrimaryColor,
+                    child:
+                        Text("Select", style: TextStyle(color: Colors.white)),
+                    onPressed: () => _showMultiSelect(context),
+                  ),
+                ),
+              ])),
     );
   }
 }
-
-

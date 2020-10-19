@@ -59,20 +59,6 @@ class _ForYouState extends State<ForYou> with TickerProviderStateMixin {
               children: [
                 Recommended(
                   size: size,
-                  image: "assets/images/injuries.png",
-                  category: "Description",
-                  press: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return Description();
-                        },
-                      ),
-                    );
-                  },
-                ),
-                Recommended(
-                  size: size,
                   image: "assets/images/stretches2.jpg",
                   category: "Stretches",
                   press: () {

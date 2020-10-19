@@ -50,6 +50,8 @@ class Monkey extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            Text(
+                "Disclaimer: Please consult a doctor if you are unsure about anything or if the pain worsens."),
             for (var i = 0; i < img.length; i++)
               Padding(
                 padding: EdgeInsets.symmetric(

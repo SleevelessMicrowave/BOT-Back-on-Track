@@ -49,7 +49,7 @@ class Assessment extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                  text: "take another assessment!",
+                  text: "Take another assessment!",
                   style: TextStyle(color: kPrimaryColor, fontSize: 15),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
@@ -65,7 +65,7 @@ class Assessment extends StatelessWidget {
             Text.rich(
               TextSpan(
                   text: "Recovered?",
-                  style: TextStyle(color: Colors.blueAccent, fontSize: 15),
+                  style: TextStyle(color: kPrimaryColor, fontSize: 15),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       Navigator.of(context).push(
@@ -77,8 +77,6 @@ class Assessment extends StatelessWidget {
                       );
                     }),
             )
-
-
           ],
         ),
       ),
