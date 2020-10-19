@@ -45,7 +45,7 @@ class Assessment extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * 0.009,
+              height: size.height * 0.001,
             ),
             Text.rich(
               TextSpan(
@@ -62,6 +62,23 @@ class Assessment extends StatelessWidget {
                       );
                     }),
             ),
+            Text.rich(
+              TextSpan(
+                  text: "Recovered?",
+                  style: TextStyle(color: Colors.blueAccent, fontSize: 15),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Recovered();
+                          },
+                        ),
+                      );
+                    }),
+            )
+
+
           ],
         ),
       ),

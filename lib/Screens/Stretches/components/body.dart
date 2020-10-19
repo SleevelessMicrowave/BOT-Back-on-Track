@@ -1,14 +1,14 @@
 import 'package:bot_back_on_track/Screens/FitnessQuiz/components/body.dart';
 import 'package:flutter/material.dart';
 
-class Body extends StatelessWidget {
+class Monkey extends StatelessWidget {
 
 
   @override
   Widget build(BuildContext context) {
     List<String> list = new List<String>();
     List<String> img = new List<String>();
-    for(var item in ouchList.ouchies)
+    for(var item in Body.bananaList )
     {
       if (item == "Ankle Pain") {
         list.add("Ankle circles, achilles stretch, towel stretch");
@@ -64,7 +64,7 @@ class Body extends StatelessWidget {
                       SizedBox(height:10),
                       Text.rich(
                         TextSpan(
-                            text: ouchList.ouchies[i],
+                            text: Body.bananaList[i],
                             style: TextStyle(fontSize: 30),
 
                         ),
