@@ -7,16 +7,27 @@ import 'package:bot_back_on_track/components/rounded_button.dart';
 import 'package:bot_back_on_track/components/rounded_input_field.dart';
 import 'package:bot_back_on_track/components/rounded_password_field.dart';
 import 'package:bot_back_on_track/components/text_field_container.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bot_back_on_track/components/google_sign_in_button.dart';
 
 import '../../../constants.dart';
 import '../../../googleSignIn.dart';
 
-class Body extends StatelessWidget {
+final FirebaseAuth mAuth = FirebaseAuth.instance;
+
+class Body extends StatefulWidget {
   const Body({
     Key key,
   }) : super(key: key);
+
+  @override
+  SignIn createState() => SignIn();
+}
+
+class SignIn extends State<Body> {
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +47,20 @@ class Body extends StatelessWidget {
             SizedBox(height: size.height * 0.01),
             RoundedInputField(
               hintText: "Your Email",
+              controller: emailController,
               onChanged: (value) {},
             ),
             RoundedPasswordField(
+              controller: passwordController,
               onChanged: (value) {},
             ),
             Row(
               children: <Widget>[
                 RoundedButton(
                   text: "LOGIN",
-                  press: () {},
+                  press: () {
+                    signInWithEmailPassword();
+                  },
                 ),
                 GoogleSignIn(
                   press: () {
@@ -81,5 +96,31 @@ class Body extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void signInWithEmailPassword() async {
+    //bool success = false;
+    FirebaseAuth user;
+    try {
+      print("here0");
+
+      user = (await mAuth.signInWithEmailAndPassword(
+          email: emailController.text,
+          password: passwordController.text)) as FirebaseAuth;
+      print("here");
+
+      //success = true;
+    } catch (e) {
+      print(e.toString());
+      print("here2");
+
+      if (true) {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) {
+            return HomeScreen();
+          }),
+        );
+      }
+    }
   }
 }

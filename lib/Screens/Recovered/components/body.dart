@@ -1,38 +1,4 @@
-import 'package:bot_back_on_track/constants.dart';
 import 'package:flutter/material.dart';
-//import 'package:smart_select/smart_select.dart';
-
-/*class Body extends StatelessWidget {
- @override
- Widget build(BuildContext context) {
-   // TODO: implement build
-   throw UnimplementedError();
- }
-}*/
-
-/*class Body extends StatefulWidget {
- @override
- _BodyState createState() => _BodyState();
-}
-
-class _BodyState extends State<Body> {
- List<int> value = [2];
- List<S2Choice<int>> frameworks = [
-   S2Choice<int>(value: 1, title: 'Ionic'),
-   S2Choice<int>(value: 2, title: 'Flutter'),
-   S2Choice<int>(value: 3, title: 'React Native'),
- ];
-
- @override
- Widget build(BuildContext context) {
-   return SmartSelect<int>.multiple(
-     title: 'Frameworks',
-     value: value,
-     //choiceItems: options,
-     onChange: (state) => setState(() => value = state.value),
-   );
- }
-}*/
 
 class ouchList {
   static var ouchies = [];
@@ -70,12 +36,12 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
     setState(() {
       if (checked) {
         _selectedValues.add(itemValue);
-        Body.bananaList.add(itemName);
-
+        ouchList.ouchies.add(itemName);
+        print(ouchList.ouchies);
       } else {
         _selectedValues.remove(itemValue);
-        Body.bananaList.remove(itemName);
-
+        ouchList.ouchies.remove(itemName);
+        print(ouchList.ouchies);
       }
     });
   }
@@ -91,7 +57,7 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Select Pain'),
+      title: Text('Select ouchy'),
       contentPadding: EdgeInsets.only(top: 12.0),
       content: SingleChildScrollView(
         child: ListTileTheme(
@@ -103,12 +69,11 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
       ),
       actions: <Widget>[
         FlatButton(
-
-          child: Text('CANCEL', style: TextStyle(color: kPrimaryColor)),
+          child: Text('CANCEL'),
           onPressed: _onCancelTap,
         ),
         FlatButton(
-          child: Text('OK', style: TextStyle(color: kPrimaryColor)),
+          child: Text('OK'),
           onPressed: _onSubmitTap,
         )
       ],
@@ -135,7 +100,6 @@ class ListItem {
 }
 
 class Body extends StatefulWidget {
-  static var bananaList = [];
   @override
   _BodyState createState() => _BodyState();
 }
@@ -186,11 +150,14 @@ class _BodyState extends State<Body> {
       builder: (BuildContext context) {
         return MultiSelectDialog(
           items: items,
-          //initialSelectedValues: [1, 3].toSet(),
+          initialSelectedValues: [1, 2, 3, 4, 5, 6, 7].toSet(),
         );
       },
     );
 
+    //print("here");
+    //print(ouchList.ouchies[1]);
+    //print("here");
     print(selectedValues);
   }
 
@@ -198,44 +165,23 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pain Assessment"),
+        title: Text("Dropdown Button"),
       ),
       body: Container(
           padding: EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-
-            /*DropdownButton<ListItem>(
+          child: Column(children: <Widget>[
+            DropdownButton<ListItem>(
                 value: _selectedItem,
                 items: _dropdownMenuItems,
                 onChanged: (value) {
                   setState(() {
                     _selectedItem = value;
                   });
-                }),*/
-            Text(
-              "What is troubling you?",
-              style: TextStyle(fontSize: 30),
-            ),
-            SizedBox(height: 20),
-            Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: RaisedButton(
-                  color: kPrimaryColor,
-
-
-                    child: Text("Select", style: TextStyle(color: Colors.white)),
-
-
-
-                onPressed: () => _showMultiSelect(context),
-              ),
-            ),
+                }),
+            RaisedButton(
+              child: Text("Open Multiselect"),
+              onPressed: () => _showMultiSelect(context),
+            )
           ])),
     );
   }
